@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +21,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         });
         Log.i("MainActivity","onCreate");
+    }
+
+    public void switchToSignUp(View view) {
+        Intent i = new Intent(this, SignUp.class);
+        startActivity(i);
     }
 
     @Override

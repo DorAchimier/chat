@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">project 3</string>
-    <string name="textName">UserName</string>
-    <string name="password">password</string>
+    <string name="textName">Username</string>
+    <string name="textNickname">Nickname</string>
+    <string name="password">Password</string>
     <string name="login">login</string>
+    <string name="signup">Sign Up</string>
+    <string name="already_registerd">Already registerd? Sign In</string>
+    <string name="not_registered">Not registered? Sign Up</string>
 </resources>
