@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project3">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".ContactsScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ChatScreen"
+            android:exported="false" />
+
+        <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity
