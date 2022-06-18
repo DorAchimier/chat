@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:text="@string/join_now"
         android:textColor="#f1356d"
-        android:textSize="40dp"
+        android:textSize="40sp"
 
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
