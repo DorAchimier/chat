@@ -59,7 +59,7 @@
                 android:layout_weight="66"
                 android:ems="10"
                 android:hint="@string/type_here"
-                android:inputType="textPersonName" />
+                android:inputType="textMultiLine" />
 
             <ImageButton
                 android:id="@+id/btnSend"
