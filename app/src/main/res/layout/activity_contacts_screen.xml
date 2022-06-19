@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="openChat"
+
             android:background="@color/red"
             app:srcCompat="@android:drawable/ic_menu_add"
             android:contentDescription="@string/add_contact" />
@@ -76,9 +76,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
-        <ListView
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:id="@+id/refreshLayout">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listContacts" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     </LinearLayout>
 

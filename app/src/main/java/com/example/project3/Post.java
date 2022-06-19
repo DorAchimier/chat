@@ -9,7 +9,14 @@ public class Post {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
+    private String username;
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     private String nickname;
+//    private LinkedList<String> contacts;
 
     public int  getId() {
         return this.id;
@@ -21,6 +28,10 @@ public class Post {
 
     public String  getNickname() {
         return this.nickname;
+    }
+
+    public String  getUsername() {
+        return this.username;
     }
 
     public void setNickname(String nickname) {
