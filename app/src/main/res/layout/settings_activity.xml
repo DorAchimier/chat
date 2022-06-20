@@ -68,12 +68,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5" >
 
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swOnOff"
+            android:layout_width="wrap_content"
+
+
+
+            android:layout_marginTop="20sp"
+            android:layout_gravity="center"
+            app:showText="true"
+            app:thumbTextPadding="2sp"
+            android:textSize="11sp"
+            android:textOff="@string/mini"
+            android:textOn="@string/wumbo"
+            app:track="@drawable/custom_track"
+            android:thumb="@drawable/custom_thumb"
+            android:layout_height="wrap_content"/>
+
+
         <Button
             android:id="@+id/btnLogOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="#f1356d"
+            android:backgroundTint="@color/red"
             android:baselineAligned="false"
             android:text="@string/log_out" />
     </LinearLayout>

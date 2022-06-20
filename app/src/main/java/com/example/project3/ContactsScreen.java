@@ -6,20 +6,22 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.project3.Entity.Contact;
 import com.example.project3.adapters.ContactsListAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.example.project3.viewmodels.ContactsViewModel;
 
 public class ContactsScreen extends AppCompatActivity {
+    private ContactsViewModel viewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts_screen);
+
+        viewModel = new ViewModelProvider(this).get(ContactsViewModel.class);
+
 
         ImageButton btnSettings = findViewById(R.id.btnSettings);
         btnSettings.setOnClickListener(view -> {
@@ -27,24 +29,32 @@ public class ContactsScreen extends AppCompatActivity {
             startActivity(i);
         });
 
+
+        ImageButton btnAdd = findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(view -> {
+            Intent i = new Intent(this, AddContact.class);
+            startActivity(i);
+        });
+
+
+
+
         RecyclerView listContacts = findViewById(R.id.listContacts);
         final ContactsListAdapter adapter = new ContactsListAdapter(this);
         listContacts.setAdapter(adapter);
         listContacts.setLayoutManager(new LinearLayoutManager(this));
-        List<Contact> con = new ArrayList<>();
-        con.add(new Contact("Haim1", "haim1jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj"));
-        con.add(new Contact("haim", "Haim"));
-        con.add(new Contact("haim2", "haim2"));
-        con.add(new Contact("a", "a"));
-        con.add(new Contact("v", "haim"));
-        con.add(new Contact("him2", "haim2"));
-        con.add(new Contact("Haim13", "haim1"));
-        con.add(new Contact("haim333", "haim"));
-        con.add(new Contact("haim233", "haim2"));
-        con.add(new Contact("Haim11212", "haim1"));
-        con.add(new Contact("haim11111", "haim"));
-        con.add(new Contact("haim20", "haim2"));
-        adapter.setContacts(con);
+
+
+        this.viewModel.get().observe(this, contacts -> {
+            adapter.setContacts(contacts);
+        });
+
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        startActivity((new Intent(Intent.ACTION_MAIN)).addCategory(Intent.CATEGORY_HOME).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
     }
 
     public void openChat(View view) {

@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:gravity="center"
-        android:id="@+id/linearLayout3"
+        android:id="@+id/centerPieceSignIn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
@@ -24,7 +24,7 @@
 
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/signInUsername"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:ems="10"
@@ -32,7 +32,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPassword2"
+            android:id="@+id/signInPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -67,7 +67,7 @@
         android:textSize="40sp"
         android:textColor="#f1356d"
         android:text="@string/welcome"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintBottom_toTopOf="@+id/centerPieceSignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -81,7 +81,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/centerPieceSignIn">
 
         <ImageView
             android:id="@+id/imageView3"

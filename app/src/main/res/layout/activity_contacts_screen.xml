@@ -38,7 +38,7 @@
             android:text="@string/appName" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"

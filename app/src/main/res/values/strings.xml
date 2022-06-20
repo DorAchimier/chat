@@ -5,7 +5,7 @@
     <string name="password">Password</string>
     <string name="login">log In</string>
     <string name="signup">Sign Up</string>
-    <string name="already_registered">Already registerd? Sign In</string>
+    <string name="already_registered">Already registered? Sign In</string>
     <string name="not_registered">Not registered? Sign Up</string>
     <string name="join_now">Join Now!</string>
     <string name="welcome">Welcome!</string>
@@ -32,4 +32,10 @@
     <string name="log_out">Log Out</string>
     <string name="settings_str">Settings</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="BaseUrl">http://10.0.2.2:7033/api/</string>
+    <string name="mini">Mini</string>
+    <string name="wumbo">Wumbo</string>
+    <string name="add">Add+</string>
+    <string name="search_username">Type Username...</string>
+    <string name="search">Search</string>
 </resources>
