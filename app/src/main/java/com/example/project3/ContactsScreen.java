@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContactsScreen extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +32,8 @@ public class ContactsScreen extends AppCompatActivity {
         listContacts.setAdapter(adapter);
         listContacts.setLayoutManager(new LinearLayoutManager(this));
         List<Contact> con = new ArrayList<>();
-        con.add(new Contact("Haim1", "haim1"));
-        con.add(new Contact("haim", "haim"));
+        con.add(new Contact("Haim1", "haim1jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj"));
+        con.add(new Contact("haim", "Haim"));
         con.add(new Contact("haim2", "haim2"));
         con.add(new Contact("a", "a"));
         con.add(new Contact("v", "haim"));

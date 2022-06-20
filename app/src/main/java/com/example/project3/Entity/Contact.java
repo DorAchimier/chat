@@ -32,6 +32,14 @@ public class Contact {
         this.nickname = nickname;
     }
 
+    public static String getLastMsg() {
+        return "temporary last messageeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
+    }
+
+    public static String getTime() {
+        return "23:22 01/01/01";
+    }
+
 //    public Chat getChat() {
 //        return chat;
 //    }

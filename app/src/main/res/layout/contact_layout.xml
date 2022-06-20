@@ -21,7 +21,7 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -31,7 +31,22 @@
 
             <TextView
                 android:id="@+id/tvContent"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:textSize="22sp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10sp"/>
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_weight="3"
+                android:textColor="@color/light_grey"
+                android:gravity="right"
+                android:textSize="10sp"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10sp"/>
@@ -44,6 +59,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
 
+
             app:layout_constraintHorizontal_bias="0.0"
 
             app:layout_constraintTop_toBottomOf="@+id/name"
@@ -52,25 +68,15 @@
             <TextView
                 android:id="@+id/tvLast"
                 android:layout_weight="1"
-                android:layout_width="match_parent"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:padding="10sp"/>
 
-            <TextView
-                android:id="@+id/tvTime"
-                android:layout_weight="5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10sp"/>
+
         </LinearLayout>
-<!--        <View-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_height="1sp"-->
-<!--            android:background="@color/red"-->
-<!--            android:layout_marginLeft="21dp"-->
-<!--            android:layout_marginRight="21dp"-->
-<!--            />-->
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1sp"

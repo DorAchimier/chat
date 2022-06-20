@@ -17,9 +17,13 @@ import java.util.List;
 public class ContactsListAdapter extends RecyclerView.Adapter<ContactsListAdapter.ContactViewHolder> {
     class ContactViewHolder extends RecyclerView.ViewHolder {
         private final TextView tvNickname;
+        private final TextView tvLastMsg;
+        private final TextView tvTime;
         private ContactViewHolder(View itemView) {
             super(itemView);
             tvNickname = itemView.findViewById(R.id.tvContent);
+            tvLastMsg = itemView.findViewById(R.id.tvLast);
+            tvTime = itemView.findViewById(R.id.tvTime);
         }
     }
 
@@ -43,6 +47,8 @@ public class ContactsListAdapter extends RecyclerView.Adapter<ContactsListAdapte
         if(contacts != null) {
             final Contact current = contacts.get(position);
             holder.tvNickname.setText(current.getNickname());
+            holder.tvLastMsg.setText(current.getLastMsg());
+            holder.tvTime.setText(current.getTime());
         }
     }
 

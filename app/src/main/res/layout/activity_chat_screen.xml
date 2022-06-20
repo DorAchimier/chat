@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/border"
+
     tools:context=".ChatScreen">
 
     <LinearLayout
             android:id="@+id/linearLayout5"
             android:layout_width="match_parent"
-            android:layout_height="98dp"
+
+            android:layout_height="78dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
             app:layout_constraintEnd_toEndOf="parent"
@@ -23,12 +24,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-
                 android:background="@color/red"
                 app:srcCompat="@android:drawable/ic_menu_revert" />
 
             <TextView
-                android:id="@+id/textView8"
+
+                android:id="@+id/chatScreenNickname"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="66"
@@ -44,7 +45,7 @@
         <LinearLayout
             android:id="@+id/linearLayout6"
             android:layout_width="match_parent"
-            android:layout_height="98dp"
+            android:layout_height="78dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,36 +55,49 @@
             app:layout_constraintVertical_bias="1.0" >
             <EditText
                 android:id="@+id/editTextTextPersonName"
+                android:background="@drawable/round_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingVertical="15sp"
+                android:paddingHorizontal="15sp"
                 android:layout_weight="66"
                 android:ems="10"
                 android:hint="@string/type_here"
                 android:inputType="textMultiLine" />
 
             <ImageButton
+                android:paddingLeft="3sp"
                 android:id="@+id/btnSend"
-                android:layout_width="59dp"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/red"
+                android:background="@drawable/round_button"
 
                 app:srcCompat="@android:drawable/ic_menu_send" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:background="@drawable/border"
+
             android:id="@+id/linearLayout7"
             android:layout_width="match_parent"
             app:boxStrokeColor="@color/red"
-            android:layout_height="0dp"
-            android:orientation="vertical"
+            android:layout_height="0sp"
+            android:orientation="horizontal"
             android:layout_marginTop="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_height="1sp"
+                android:background="@drawable/line"/>
+
+        </LinearLayout>
+
 
 
 

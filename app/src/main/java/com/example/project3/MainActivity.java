@@ -8,6 +8,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -21,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
         });
         Log.i("MainActivity","onCreate");
 
-
+        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(MainActivity.this, instanceIdResult -> {
+            String newToken = instanceIdResult.getToken();
+        });
     }
 
     public void switchToSignUp(View view) {
