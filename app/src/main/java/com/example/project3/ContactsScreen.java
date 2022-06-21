@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -58,7 +59,10 @@ public class ContactsScreen extends AppCompatActivity {
     }
 
     public void openChat(View view) {
+        TextView tv = findViewById(R.id.tvContent);
+        String str = tv.toString();
         Intent i = new Intent(this, ChatScreen.class);
+        i.putExtra("NICKNAME", str);
         startActivity(i);
     }
 }
