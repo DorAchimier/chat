@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "396542872623",
+    "project_id": "amnonchat",
+    "storage_bucket": "amnonchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396542872623:android:1f8521b11b62d8257f4ada",
+        "android_client_info": {
+          "package_name": "com.example.project3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "396542872623-hf86eiurf9a5n9kv372s8k0ppj5n3cbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2FhQgaqzFt_GZJOM2Krjz7_dO0OIkeds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "396542872623-hf86eiurf9a5n9kv372s8k0ppj5n3cbh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
