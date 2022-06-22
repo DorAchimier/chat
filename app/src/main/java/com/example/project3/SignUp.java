@@ -10,9 +10,11 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import com.example.project3.Entity.Contact;
+
 public class SignUp extends AppCompatActivity {
     private AppDB db;
-    private PostDao postDao;
+    private ContactDao contactDao;
     private String un;
     private String nick;
     private String pass;
@@ -28,11 +30,11 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
 
-        this.db = Room.databaseBuilder(getApplicationContext(), AppDB.class, "PostsDB")
+        this.db = Room.databaseBuilder(getApplicationContext(), AppDB.class, "ContactsDB")
                 .allowMainThreadQueries()
                 .build();
 
-        this.postDao = this.db.postDao();
+        this.contactDao = this.db.contactDao();
 
 
         usernameField = (EditText)findViewById(R.id.signUpUsername);
@@ -55,12 +57,9 @@ public class SignUp extends AppCompatActivity {
             if(!a || !b || !c) {
                 return;
             }
-            Intent i = new Intent(this, FormActivity.class);
+            contactDao.insert(new Contact(un, nick, pass));
+            Intent i = new Intent(this, ContactsScreen.class);
             startActivity(i);
-            EditText un = this.usernameField;
-            Post post = new Post(un.getText().toString());
-            postDao.insert(post);
-            finish();
         });
     }
 
@@ -96,7 +95,7 @@ public class SignUp extends AppCompatActivity {
             this.usernameField.setError("Username must be at least 4 characters long");
             return false;
         }
-        if(this.un.equals("ADMIN")) {
+        if(this.un.equals("ADMIN") || this.contactDao.get(this.un) != null) {
             //add server confirmation later
             this.usernameField.setError("Username already taken, please pick another one");
             return false;
@@ -109,6 +108,7 @@ public class SignUp extends AppCompatActivity {
             this.nicknameField.setError("Please enter a nickname!");
             return false;
         }
+
         return true;
     }
 

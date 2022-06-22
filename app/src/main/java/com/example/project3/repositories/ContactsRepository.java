@@ -24,18 +24,13 @@ public class ContactsRepository {
             super();
 
             List<Contact> contacts = new LinkedList<>();
-            contacts.add(new Contact("Haim1", "haim1jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj"));
-            contacts.add(new Contact("haim", "Haim"));
-            contacts.add(new Contact("haim2", "haim2"));
-            contacts.add(new Contact("a", "a"));
-            contacts.add(new Contact("v", "haim"));
-            contacts.add(new Contact("him2", "haim2"));
-            contacts.add(new Contact("Haim13", "haim1"));
-            contacts.add(new Contact("haim333", "haim"));
-            contacts.add(new Contact("haim233", "haim2"));
-            contacts.add(new Contact("Haim11212", "haim1"));
-            contacts.add(new Contact("haim11111", "haim"));
-            contacts.add(new Contact("haim20", "haim2"));
+            contacts.add(new Contact("Haim1", "haim1jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj", "11111"));
+            contacts.add(new Contact("haim", "Haim", "11111"));
+            contacts.add(new Contact("haim2", "haim2", "11111"));
+            contacts.add(new Contact("a", "a", "11111"));
+            contacts.add(new Contact("v", "haim", "11111"));
+            contacts.add(new Contact("him2", "haim2", "11111"));
+
 
             setValue(contacts);
 

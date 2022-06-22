@@ -7,23 +7,31 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
+import com.example.project3.Entity.Contact;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 public class MainActivity extends AppCompatActivity {
-    private LinearLayout ll;
     private EditText usernameField;
     private EditText passwordField;
     private String pass;
     private String un;
+    private ContactDao contactDao;
+    private AppDB db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.db = Room.databaseBuilder(getApplicationContext(), AppDB.class, "ContactsDB")
+                .allowMainThreadQueries()
+                .build();
+
+        this.contactDao = this.db.contactDao();
 
         usernameField = (EditText)findViewById(R.id.signInUsername);
         passwordField = (EditText)findViewById(R.id.signInPassword);
@@ -53,29 +61,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean validate() {
-        int len = 4;
-        boolean b1 = true, b2 = true;
+        boolean b1 = true;
         boolean n1 = !(this.pass == null);
         boolean n2 = !(this.un == null);
         if(n1 && TextUtils.isEmpty(this.pass)) {
             this.passwordField.setError("Please enter a password!");
             b1 = false;
         }
+        boolean b2 = true;
         if(n2 && TextUtils.isEmpty(this.un)) {
             this.usernameField.setError("Please enter a username!");
             b2 = false;
         }
-        if(n1 && b1 && this.pass.length() < len) {
+        if(!(b1 && b2)) {
+            return false;
+        }
+        Contact c = this.contactDao.get(this.un);
+        if(n1 && n2 && (c == null ||  !c.authenticate(this.pass))) {
             this.passwordField.setError("Wrong password and/or username...");
             this.usernameField.setError("Wrong password and/or username...");
-            b1 = false;
+            return false;
         }
-        if(n2 && b2 && this.un.length() < len) {
-            this.passwordField.setError("Wrong password and/or username...");
-            this.usernameField.setError("Wrong password and/or username...");
-            b2 = false;
-        }
-        return b1 && b2 && n1 && n2;
+        return n1 && n2;
     }
 
     public void switchToSignUp(View view) {

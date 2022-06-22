@@ -19,11 +19,13 @@ public class ContactsListAdapter extends RecyclerView.Adapter<ContactsListAdapte
         private final TextView tvNickname;
         private final TextView tvLastMsg;
         private final TextView tvTime;
+        private final TextView tvUserName;
         private ContactViewHolder(View itemView) {
             super(itemView);
             tvNickname = itemView.findViewById(R.id.tvContent);
             tvLastMsg = itemView.findViewById(R.id.tvLast);
             tvTime = itemView.findViewById(R.id.tvTime);
+            tvUserName=itemView.findViewById(R.id.usernameHolder);
         }
     }
 
@@ -49,6 +51,7 @@ public class ContactsListAdapter extends RecyclerView.Adapter<ContactsListAdapte
             holder.tvNickname.setText(current.getNickname());
             holder.tvLastMsg.setText(current.getLastMsg());
             holder.tvTime.setText(current.getTime());
+            holder.tvUserName.setText(current.getUsername());
         }
     }
 

@@ -8,7 +8,7 @@ import androidx.room.Room;
 
 public class FormActivity extends AppCompatActivity {
     private AppDB db;
-    private PostDao postDao;
+    private ContactDao contactDao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +20,7 @@ public class FormActivity extends AppCompatActivity {
                 .allowMainThreadQueries()
                 .build();
 
-        this.postDao = this.db.postDao();
+        this.contactDao = this.db.contactDao();
 
         Button btnSignUp = findViewById(R.id.btnSignUp);
         btnSignUp.setOnClickListener(view -> {

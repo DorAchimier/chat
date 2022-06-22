@@ -1,19 +1,32 @@
 package com.example.project3.Entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
 public class Contact {
-    @PrimaryKey
+    @PrimaryKey @NonNull
     private String username;
     private String nickname;
+    private String password;
 //    private Chat chat;
 
-    public Contact(String username, String nickname) {
+//    public Contact(String username, String nickname) {
+////        this.chat = chat;
+//        this.nickname = nickname;
+//        this.username = username;
+
+    public String getPassword() {
+        return password;
+    }
+//    }
+
+    public Contact(String username, String nickname, String password) {
 //        this.chat = chat;
         this.nickname = nickname;
         this.username = username;
+        this.password = password;
     }
 
     public String getUsername() {
@@ -38,6 +51,10 @@ public class Contact {
 
     public static String getTime() {
         return "23:22 01/01/01";
+    }
+
+    public boolean authenticate(String pass) {
+        return this.password.equals(pass);
     }
 
 //    public Chat getChat() {

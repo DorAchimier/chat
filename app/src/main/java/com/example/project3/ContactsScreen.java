@@ -59,10 +59,10 @@ public class ContactsScreen extends AppCompatActivity {
     }
 
     public void openChat(View view) {
-        TextView tv = findViewById(R.id.tvContent);
-        String str = tv.toString();
         Intent i = new Intent(this, ChatScreen.class);
-        i.putExtra("NICKNAME", str);
+        TextView t = findViewById(R.id.usernameHolder);
+        String str1 = t.getText().toString();
+        i.putExtra("id",str1);
         startActivity(i);
     }
 }

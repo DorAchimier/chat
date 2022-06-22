@@ -7,11 +7,6 @@
     tools:context=".ContactsScreen">
 
 
-
-
-
-
-
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
@@ -21,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <TextView
@@ -29,13 +24,13 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="66"
+            android:background="@color/red"
             android:gravity="center_vertical"
             android:paddingStart="8dp"
             android:paddingEnd="0dp"
-            android:background="@color/red"
-            android:textSize="25sp"
+            android:text="@string/appName"
             android:textColor="@color/white"
-            android:text="@string/appName" />
+            android:textSize="25sp" />
 
         <ImageButton
             android:id="@+id/btnAdd"
@@ -44,8 +39,9 @@
             android:layout_weight="1"
 
             android:background="@color/red"
-            app:srcCompat="@android:drawable/ic_menu_add"
-            android:contentDescription="@string/add_contact" />
+            android:contentDescription="@string/add_contact"
+            app:srcCompat="@android:drawable/ic_menu_add" />
+
         <ImageButton
             android:id="@+id/btnSettings"
             android:layout_width="wrap_content"
@@ -53,11 +49,8 @@
             android:layout_weight="1"
 
             android:background="@color/red"
-            app:srcCompat="@android:drawable/ic_menu_preferences"
-            android:contentDescription="@string/settings" />
-
-
-
+            android:contentDescription="@string/settings"
+            app:srcCompat="@android:drawable/ic_menu_preferences" />
 
 
     </LinearLayout>
@@ -77,21 +70,17 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:layout_height="match_parent"
+            android:id="@+id/refreshLayout"
             android:layout_width="match_parent"
-            android:id="@+id/refreshLayout">
+            android:layout_height="match_parent">
+
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listContacts"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/listContacts" />
+                android:layout_height="match_parent" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     </LinearLayout>
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
