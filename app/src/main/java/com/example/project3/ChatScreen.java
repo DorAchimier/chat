@@ -23,12 +23,12 @@ public class ChatScreen extends AppCompatActivity {
                 .build();
 
         this.contactDao = this.db.contactDao();
-        Bundle extras = getIntent().getExtras();
-        String value = extras.getString("id");
-        Contact c = this.contactDao.get(value);
-        String n = c.getNickname();
+        //Bundle extras = getIntent().getExtras();
+        //String value = extras.getString("id");
+        //Contact c = this.contactDao.get(value);
+        //String n = c.getNickname();
         TextView name = findViewById(R.id.chatScreenNickname);
-        name.setText(n);
+        name.setText("");
 
         ImageButton btnBack = findViewById(R.id.btnBack);
 
